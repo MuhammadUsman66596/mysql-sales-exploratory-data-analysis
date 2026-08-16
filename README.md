@@ -88,6 +88,7 @@ erDiagram
 ## 🔄 EDA Process
 
 The analysis follows seven sequential stages:
+<img width="2400" height="1800" alt="EDA_Process_Diagram" src="https://github.com/user-attachments/assets/a04bb2ba-6f89-44c0-85bb-5c7ce0e22509" />
 
 | # | Stage | Focus |
 |---|---|---|
@@ -116,13 +117,7 @@ mysql-sales-eda/
 │   ├── 05_measures_exploration.sql
 │   ├── 06_magnitude_analysis.sql
 │   └── 07_ranking_analysis.sql
-├── datasets/
-│   ├── dim_customers.csv
-│   ├── dim_products.csv
-│   └── fact_sales.csv
-├── docs/
-│   ├── EDA_Process_Diagram.png
-│   └── MySQL_Sales_EDA_Project_Report.docx
+
 └── LICENSE
 ```
 
@@ -132,16 +127,6 @@ mysql-sales-eda/
 
 The project also involved translating SQL Server-style patterns into valid MySQL syntax — e.g. using `LIMIT`, `CURDATE()`, and `TIMESTAMPDIFF()` in place of SQL Server-specific equivalents.
 
-## 🔍 Sample Query
-
-```sql
--- Total revenue, quantity, and average order value
-SELECT
-    SUM(sales_amount)                              AS total_revenue,
-    SUM(quantity)                                  AS total_quantity,
-    COUNT(DISTINCT order_number)                   AS total_orders,
-    ROUND(SUM(sales_amount) / COUNT(DISTINCT order_number), 2) AS avg_order_value
-FROM fact_sales;
 ```
 
 ## 📈 Key Findings
@@ -157,31 +142,10 @@ FROM fact_sales;
 
 For the full write-up, see the [project report](docs/MySQL_Sales_EDA_Project_Report.docx).
 
-## 🚀 Getting Started
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/[your-username]/mysql-sales-eda.git
-   ```
-2. **Create the database and load the data** in MySQL Workbench (or CLI), importing the CSVs from `datasets/` into `dim_customers`, `dim_products`, and `fact_sales`.
-3. **Run the scripts in order**, from `01_database_exploration.sql` through `07_ranking_analysis.sql`.
-4. Review each script's output to follow the analysis stage by stage.
-
-**Requirements:** MySQL 8.x, MySQL Workbench (or any MySQL client).
-
-## 🔮 Future Improvements
-
-- Interactive dashboard (Power BI / Tableau)
-- Customer segmentation
-- Year-over-year growth analysis
-- Repeat-purchase / retention analysis
-- Deeper product-performance reporting
-
 ## 👤 Author
 
 **Muhammad Usman**
 Computer Science student · Data Analytics enthusiast
-🔗 [LinkedIn](https://www.linkedin.com/in/your-profile) · [GitHub](https://github.com/your-username)
 
 ---
 
